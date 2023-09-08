@@ -1,21 +1,24 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { theme } from '../theme';
+import { localStorageColorSchemeManager } from './colorSchemeManager';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Daktilo 2.0',
+  description: 'Daktilo',
 };
+
+const colorSchemeManager = localStorageColorSchemeManager({ key: 'my-color-scheme' });
 
 export default function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en">
       <head>
         <ColorSchemeScript />
-        <link rel="shortcut icon" href="/favicon.svg" />
       </head>
       <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   );

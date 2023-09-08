@@ -1,22 +1,22 @@
-import { Title, Text, Anchor } from '@mantine/core';
+import { Title, Text } from '@mantine/core';
 import classes from './Welcome.module.css';
 
-export function Welcome() {
+interface Welcome {
+  title?: string;
+  color?: any;
+}
+
+export function Welcome({ title = 'Daktilo 2.0', color }: Welcome) {
   return (
     <>
-      <Title className={classes.title} ta="center" mt={100}>
+      <Title className={classes.title} ta="center" c={color} mt={100}>
         Welcome to{' '}
         <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
-          Mantine
+          {title}
         </Text>
       </Title>
       <Text color="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        This starter Next.js project includes a minimal setup for server side rendering, if you want
-        to learn more on Mantine + Next.js integration follow{' '}
-        <Anchor href="https://mantine.dev/guides/next/" size="lg">
-          this guide
-        </Anchor>
-        . To get started edit page.tsx file.
+        Try to change title and color.
       </Text>
     </>
   );

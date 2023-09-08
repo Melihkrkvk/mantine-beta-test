@@ -1,7 +1,14 @@
 import { Welcome } from './Welcome';
+import {Meta, StoryObj, Preview} from '@storybook/react';
 
-export default {
-  title: 'Welcome',
+const meta: Meta<typeof Welcome> = {
+  component: Welcome,
 };
+export default meta;
 
-export const Usage = () => <Welcome />;
+type Story = StoryObj<typeof Welcome>;
+
+export const Primary: Story = {args: {
+  title: 'Daktilo 2.0',
+  color: 'black',
+}}
