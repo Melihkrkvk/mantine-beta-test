@@ -1,0 +1,13 @@
+.text_style {
+  color: black;
+  @mixin hover {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    cursor: pointer;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}

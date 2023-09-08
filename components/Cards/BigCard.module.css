@@ -7,3 +7,39 @@
     box-shadow: var(--mantine-shadow-md);
   }
 }
+
+.title {
+  font-family: Greycliff CF, var(--mantine-font-family);
+  font-weight: 700;
+}
+
+.main_link {
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-gray-5));
+}
+
+.list_item {
+  border-top: rem(1) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+}
+
+.text_hover {
+  @mixin hover {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    cursor: pointer;
+  }
+}
+
+.badge {
+  bottom: -1;
+  left: 0;
+  position: absolute;
+  background-color: light-dark(var(--mantine-white), var(--mantine-color-dark-6));
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  font-size: 14;
+}

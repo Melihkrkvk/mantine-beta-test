@@ -8,7 +8,6 @@ import BigCard from '@/components/Cards/BigCard';
 export default function HomePage() {
   return (
     <>
-      <Welcome />
       <ColorSchemeToggle />
       <Anchor
         component={Link}
@@ -19,7 +18,14 @@ export default function HomePage() {
       >
         asd
       </Anchor>
-      {/* <BigCard /> */}
+      <BigCard
+        title="Deneme"
+        badgeTitle="Deneme2"
+        hasExtra={false}
+        link={'/'}
+        listType="off"
+        separator={false}
+      />
     </>
   );
 }
