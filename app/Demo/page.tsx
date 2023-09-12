@@ -42,6 +42,7 @@ const Demo = () => {
       >
         Deneme
       </Title>
+      <Button color={'my-blue'}>Test</Button>
     </Container>
   );
 };

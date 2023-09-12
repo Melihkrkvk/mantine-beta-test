@@ -1,8 +1,7 @@
 'use client';
-import { createTheme, Button, Text } from '@mantine/core';
+import { createTheme, Box, Text } from '@mantine/core';
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
   fontFamily:
     '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
   //primaryColor: 'lime',

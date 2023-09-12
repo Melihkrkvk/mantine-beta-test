@@ -1,5 +1,4 @@
 .text_style {
-  color: black;
   @mixin hover {
     text-decoration: underline;
     text-decoration-style: solid;

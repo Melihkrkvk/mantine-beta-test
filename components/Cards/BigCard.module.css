@@ -31,10 +31,8 @@
 }
 
 .badge {
-  bottom: -1;
-  left: 0;
   position: absolute;
-  background-color: light-dark(var(--mantine-white), var(--mantine-color-dark-6));
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
   padding: 3px;
   padding-left: 8px;
   padding-right: 8px;

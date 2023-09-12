@@ -1,31 +1,42 @@
+'use client';
 import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Anchor, Grid } from '@mantine/core';
-import { themeBreakePoints } from '../test-utils/mock';
+import { Anchor, Container, Grid } from '@mantine/core';
+import { listData } from '../test-utils/mock';
 import Link from 'next/link';
 import BigCard from '@/components/Cards/BigCard';
 
 export default function HomePage() {
   return (
     <>
-      <ColorSchemeToggle />
-      <Anchor
-        component={Link}
-        href={'/Demo'}
-        styles={{
-          root: { textDecorationColor: 'red' },
-        }}
-      >
-        asd
-      </Anchor>
-      <BigCard
-        title="Deneme"
-        badgeTitle="Deneme2"
-        hasExtra={false}
-        link={'/'}
-        listType="off"
-        separator={false}
-      />
+      <Container>
+        <ColorSchemeToggle />
+        <Anchor
+          component={Link}
+          href={'/Demo'}
+          styles={{
+            root: { textDecorationColor: 'red' },
+          }}
+        >
+          asd
+        </Anchor>
+
+        <BigCard
+          title="Deneme"
+          badgeTitle="Deneme2"
+          hasExtra={true}
+          link={'/'}
+          listType="custom"
+          separator={true}
+          badgeIconName="IconCircle"
+          listIconName="IconCircleDashed"
+          listData={listData}
+          date="Agust, 03 2023"
+          listIconBackground={true}
+          cardImage="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+          cardImageAlt="Temsili görsel"
+        />
+      </Container>
     </>
   );
 }

@@ -1,5 +1,15 @@
 'use client';
-import { ThemeIcon, Card, Image, Text, Container, AspectRatio, List, Group } from '@mantine/core';
+import {
+  ThemeIcon,
+  Card,
+  Image,
+  Text,
+  Container,
+  AspectRatio,
+  List,
+  Group,
+  Box,
+} from '@mantine/core';
 import Link from 'next/link';
 import {
   IconCamera,
@@ -15,10 +25,24 @@ import clsx from 'clsx';
 import ExtraList from '../ExtraList/ExtraList';
 
 interface BigCard {
+  cardSettings?: {
+    cardRadius?: 'xs' | 'sm' | 'md' | 'lg' | number;
+    cardBgColor?: string;
+    cardHoverColor?: string;
+    titleFontSz?: 'xs' | 'sm' | 'md' | 'lg' | number;
+    titleFontWe?: 'bold' | 'bolder' | number;
+    titleFontFamily?: string;
+    titleColor?: string;
+    dateFontSz?: 'xs' | 'sm' | 'md' | 'lg' | number;
+    dateFontColor?: string;
+    dateFontFamily?: string;
+    dateFontWe?: 'bold' | 'bolder' | number;
+  };
   title: string;
   listType: 'on' | 'off' | 'custom' | 'number';
   date?: string;
   cardImage?: string;
+  cardImageAlt?: string;
   hasExtra: boolean;
   separator: boolean;
   link: string;
@@ -28,18 +52,19 @@ interface BigCard {
   listIconName?: string;
   listIconBackground?: boolean;
   listIconSettings?: {
-    color: string;
-    size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
+    color?: string;
+    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
   };
   listIconBgSettings?: {
-    radius: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
-    color: string;
+    radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
+    color?: string;
   };
   listData?: Array<{
     withImage: boolean;
     content: string;
     link: string;
     selfIconName?: any;
+    hoverColor?: string;
   }>;
 }
 
@@ -49,7 +74,7 @@ interface NestedIconProps {
   listIconBgSettings?: any;
 }
 
-const IconMapper = (IconName: string | undefined | any) => {
+const IconMapper = (IconName: undefined | any) => {
   const icons: any = {
     IconPlayerRecordFilled: IconPlayerRecordFilled,
     IconVideo: IconVideo,
@@ -78,6 +103,13 @@ export default function BigCard({
   listIconBgSettings,
   listIconSettings,
   cardImage,
+  cardImageAlt,
+  cardSettings = {
+    cardRadius: 'md',
+    dateFontColor: 'dimmed',
+    dateFontWe: 700,
+    dateFontSz: 'xs',
+  },
 }: BigCard) {
   const Component = IconMapper(badgeIconName);
   const ListIconComponent = IconMapper(listIconName);
@@ -97,48 +129,103 @@ export default function BigCard({
     return <ListIconComponent {...listIconSettings} />;
   };
 
+  const listdata = listData?.map((data, index) => (
+    <Link key={index} href={data.link} className={classes.main_link}>
+      <List.Item
+        icon={data.selfIconName}
+        key={index}
+        pt={10}
+        pb={10}
+        className={separator ? classes.list_item : ''}
+      >
+        <ExtraList hoverColor={cardSettings.cardHoverColor} {...data} />
+      </List.Item>
+    </Link>
+  ));
+
+  const badgePoses = {
+    bottomLeft: {
+      bottom: -1,
+      left: -1,
+    },
+    bottomRight: {
+      bottom: -1,
+      right: -1,
+    },
+    topLeft: {
+      top: -1,
+      left: -1,
+    },
+    topRight: {
+      top: -1,
+      right: -1,
+    },
+  };
+
   return (
     <>
-      <Card key={title} p="md" radius="md" className={classes.card}>
+      <Card
+        bg={cardSettings.cardBgColor}
+        key={title}
+        p="md"
+        radius={cardSettings?.cardRadius}
+        className={classes.card}
+      >
         <Link key={title} href={link} className={classes.main_link}>
           <div style={{ position: 'relative' }}>
             <AspectRatio ratio={1920 / 1080}>
-              <Image src={cardImage} />
+              <Image alt={cardImageAlt} src={cardImage} />
             </AspectRatio>
-            <div className={classes.badge}>
-              <ListIconComponent
-                style={{ marginRight: 8, alignSelf: 'center', color: 'red' }}
-                size={20}
-              />
+            <Box style={badgePoses[badgePos]} ta={'center'} className={classes.badge}>
+              <Component style={{ marginRight: 8, alignSelf: 'center', color: 'red' }} size={20} />
               {badgeTitle}
-            </div>
+            </Box>
           </div>
-          <Text className={classes.text_hover} c={'dimmed'} size={'xs'} tt={'uppercase'}>
+          <Text
+            className={classes.text_hover}
+            c={cardSettings.dateFontColor}
+            tt={'uppercase'}
+            mt={'md'}
+            fw={cardSettings.dateFontWe}
+            fz={cardSettings.dateFontSz}
+            ff={cardSettings.dateFontFamily}
+            style={{
+              textDecorationColor: cardSettings.cardHoverColor,
+            }}
+          >
             {date}
           </Text>
-          <Text className={clsx([classes.title, classes.text_hover])} mt={5}>
+          <Text
+            c={cardSettings.titleColor}
+            fz={cardSettings.titleFontSz}
+            fw={cardSettings.titleFontWe}
+            ff={cardSettings.titleFontFamily}
+            className={clsx([classes.title, classes.text_hover])}
+            mt={{ base: 5 }}
+            style={{
+              textDecorationColor: cardSettings.cardHoverColor,
+            }}
+          >
             {title}
           </Text>
         </Link>
         {hasExtra && (
           <List
             mt={20}
-            listStyleType={
-              listType === 'on' ? 'inherit' : listType === 'number' ? '-moz-initial' : 'none'
-            }
+            listStyleType={listType === 'on' ? 'inherit' : listType === 'number' ? 'bold' : 'none'}
             icon={
               listType === 'custom' ? (
                 <ListNestedIcon
                   listIconBackground={listIconBackground}
                   listIconBgSettings={listIconBgSettings}
-                  listIconSettings={listIconBgSettings}
+                  listIconSettings={listIconSettings}
                 />
               ) : (
                 ''
               )
             }
           >
-            {/* {listdata} */}
+            {listdata}
           </List>
         )}
       </Card>
