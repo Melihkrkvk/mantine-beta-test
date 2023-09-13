@@ -1,25 +1,11 @@
 'use client';
-import {
-  Button,
-  Container,
-  Title,
-  useMantineColorScheme,
-  useComputedColorScheme,
-} from '@mantine/core';
+import { Button, Container, Title } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
-
+import darkMode from '@/hooks/darkMode';
 const Demo = () => {
-  const { setColorScheme, colorScheme } = useMantineColorScheme();
-  const [value, SetValue] = useState('light');
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const tryMode = window.localStorage.getItem('mantine-color-scheme') as any;
-      SetValue(tryMode);
-    }
-  }, [colorScheme]);
+  const { value } = darkMode();
 
   return (
     <Container m={'lg'}>

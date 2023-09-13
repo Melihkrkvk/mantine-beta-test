@@ -1,4 +1,3 @@
-'use client';
 import { Welcome } from '../components/Welcome/Welcome';
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { Anchor, Container, Grid } from '@mantine/core';
@@ -33,6 +32,12 @@ export default function HomePage() {
           listData={listData}
           date="Agust, 03 2023"
           listIconBackground={true}
+          listIconBgSettings={{
+            radius: 'lg',
+          }}
+          listIconSettings={{
+            size: 20,
+          }}
           cardImage="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
           cardImageAlt="Temsili görsel"
         />

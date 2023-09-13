@@ -1,15 +1,5 @@
 'use client';
-import {
-  ThemeIcon,
-  Card,
-  Image,
-  Text,
-  Container,
-  AspectRatio,
-  List,
-  Group,
-  Box,
-} from '@mantine/core';
+import { ThemeIcon, Card, Image, Text, AspectRatio, List, Box } from '@mantine/core';
 import Link from 'next/link';
 import {
   IconCamera,
