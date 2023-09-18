@@ -1,11 +1,7 @@
 .card {
   transition: transform 150ms ease, box-shadow 150ms ease;
   position: relative;
-
-  @mixin hover {
-    transform: scale(1.01);
-    box-shadow: var(--mantine-shadow-md);
-  }
+  box-shadow: var(--mantine-shadow-md);
 }
 
 .title {
