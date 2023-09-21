@@ -4,6 +4,7 @@ import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
 import Navbar from '@/components/Navbars/Navbar';
 import NavbarSimple from '@/components/Navbars/NavbarSimple';
+import ClassicFooter from '@/components/Footers/ClassicFooter/ClassicFooter';
 
 export const metadata = {
   title: 'Daktilo 2.0',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: any }) {
           {/* <Navbar /> */}
           <NavbarSimple />
           {children}
+          <ClassicFooter />
         </MantineProvider>
       </body>
     </html>
