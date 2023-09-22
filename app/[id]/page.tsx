@@ -26,7 +26,7 @@ const Page = async ({ params }: Props) => {
                 take: 2
             }
         });
-        console.log('data: ', data.data.pages.items);
+        console.log('data: ', data.data.pages.items.template.screens);
     }
     catch (err: any) {
         console.log('err: ', err);

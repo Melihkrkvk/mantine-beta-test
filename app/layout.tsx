@@ -3,6 +3,7 @@ import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
 import NavbarSimple from '@/components/Navbars/NavbarSimple';
 import ClassicFooter from '@/components/Footers/ClassicFooter/ClassicFooter';
+import Navbar from '@/components/Navbars/Navbar';
 
 
 export const metadata = {
@@ -18,7 +19,8 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <NavbarSimple />
+          <Navbar />
+          {/* <NavbarSimple /> */}
           {children}
           <ClassicFooter />
         </MantineProvider>
