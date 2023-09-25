@@ -1,5 +1,5 @@
 'use client';
-import { ThemeIcon, Card, Image, Text, AspectRatio, List, Box } from '@mantine/core';
+import { ThemeIcon, Card, Text, AspectRatio, List, Box, Image } from '@mantine/core';
 import Link from 'next/link';
 import {
   IconCamera,
@@ -164,7 +164,7 @@ export default function BigCard({
         <Link key={title} href={link} className={classes.main_link}>
           <div style={{ position: 'relative' }}>
             <AspectRatio ratio={1920 / 1080}>
-              <Image alt={cardImageAlt} src={cardImage} />
+              <Image src={cardImage} alt={cardImageAlt} />
             </AspectRatio>
             <Box style={badgePoses[badgePos]} ta={'center'} className={classes.badge}>
               <Component style={{ marginRight: 8, alignSelf: 'center', color: 'red' }} size={20} />

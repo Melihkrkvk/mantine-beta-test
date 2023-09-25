@@ -1,6 +1,6 @@
 import { GET_NEWS } from "@/graphql/news";
 import { getClient } from "@/lib/client";
-
+import { Container, Grid, SimpleGrid } from "@mantine/core";
 
 
 
@@ -11,9 +11,8 @@ type Props = {
 };
 
 export const generateMetadata = ({ params }: Props) => {
-    // const news = await fetchNewsById(newsId);
     return {
-        title: `Haber id: ${params.id}`
+        title: `${params.id}`
     };
 };
 
@@ -26,17 +25,15 @@ const Page = async ({ params }: Props) => {
                 take: 2
             }
         });
-        console.log('data: ', data.data.pages.items.template.screens);
+        console.log('data: ', data.data.pages.items[0].template.screens[0].rows[2]);
     }
     catch (err: any) {
         console.log('err: ', err);
-        console.log('err2: ', err.networkError.result);
     }
-    // const news = await fetchNewsById(newsId);
 
     return (
         <>
-            <div>Dynamic Page</div>
+            <div>dynmaic page</div>
         </>
     );
 }

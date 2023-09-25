@@ -6,10 +6,8 @@ import classes from './Navbar.module.css';
 import Link from 'next/link';
 
 const links = [
-  { link: '/about', label: 'Features' },
-  { link: '/pricing', label: 'Pricing' },
-  { link: '/learn', label: 'Learn' },
-  { link: '/community', label: 'Community' },
+  { link: '/', label: 'Home' },
+
 ];
 
 const Navbar = () => {
