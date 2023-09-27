@@ -25,7 +25,7 @@ const Page = async ({ params }: Props) => {
                 take: 2
             }
         });
-        console.log('data: ', data.data.pages.items[0].template.screens[0].rows[2]);
+        console.log('data: ', data.data);
     }
     catch (err: any) {
         console.log('err: ', err);
@@ -33,7 +33,7 @@ const Page = async ({ params }: Props) => {
 
     return (
         <>
-            <div>dynmaic page</div>
+            <div>dynmaic page {params.id}</div>
         </>
     );
 }

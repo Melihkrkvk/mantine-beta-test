@@ -1,8 +1,4 @@
-'use client'
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Anchor, Container, Grid, SimpleGrid } from '@mantine/core';
-import { listData } from '../test-utils/mock';
+import { Container, Grid, GridCol, SimpleGrid } from '@mantine/core';
 import Link from 'next/link';
 import BasicCard from '@/components/Cards/BasicCard/BasicCard';
 import dynamic from 'next/dynamic';
@@ -29,13 +25,12 @@ export default function HomePage() {
       <Container my="md">
         <Grid columns={res.grid.columns}>
           {res.rows.map((row: any, index: any) => {
-            console.log('row: ', row);
             return row.components.map((component: any, componentIndex: any) => {
               const Component = ComponentMapper(component.name);
 
               if (component.columns && component.columns.components.length) {
                 return (
-                  <Grid.Col
+                  <GridCol
                     span={{ lg: component.breakpoints.lg, md: component.breakpoints.md, sm: component.breakpoints.sm }}
                     key={componentIndex}
                     id={`grid col ${index}`}
@@ -50,20 +45,20 @@ export default function HomePage() {
                         })
                       }
                     </SimpleGrid>
-                  </Grid.Col>
+                  </GridCol>
                 );
 
               }
               return (
-                <Grid.Col
+                <GridCol
+                  span={{ lg: component.breakpoints.lg, md: component.breakpoints.md, sm: component.breakpoints.sm, xs: component.breakpoints.xs }}
                   key={componentIndex}
                   id={`grid col ${index}`}
                 >
                   <SimpleGrid cols={component.columns}>
                     <Component {...component.props} />
                   </SimpleGrid>
-
-                </Grid.Col>
+                </GridCol>
 
               );
             });

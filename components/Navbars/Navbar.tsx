@@ -4,6 +4,7 @@ import { Container, Group, Burger, Anchor } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Navbar.module.css';
 import Link from 'next/link';
+import ToggleColorScheme from '../ColorSchemeToggle/ToggleColorScheme';
 
 const links = [
   { link: '/', label: 'Home' },
@@ -32,13 +33,15 @@ const Navbar = () => {
 
   return (
     <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
+      <Container size="lg" className={classes.inner}>
         Logo
         <Group gap={5} visibleFrom="xs">
           {items}
         </Group>
-
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        <Group gap={1}>
+          <ToggleColorScheme />
+          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        </Group>
       </Container>
     </header>
   );

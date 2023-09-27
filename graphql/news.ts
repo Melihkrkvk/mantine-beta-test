@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const GET_NEWS = gql`
+/* export const GET_NEWS = gql`
   query pages($take: Int!) {
     pages(take: $take) {
       items {
@@ -39,7 +39,7 @@ export const GET_NEWS = gql`
       }
     }
   }
-`;
+`; */
 
 /* export const GET_NEWS = gql`
   query ExampleQuery($take: Int!) {
@@ -54,3 +54,23 @@ export const GET_NEWS = gql`
     }
   }
 `; */
+export const GET_NEWS = gql`
+query pages($take: Int!) {
+  pages(take: $take) {
+    pagination {
+      totalPages
+      totalItems
+      skip
+    }
+    items {
+      id
+      name
+      uuid
+      createdAt
+      deletedAt
+      description
+      updatedAt
+
+    }
+  }
+}`;

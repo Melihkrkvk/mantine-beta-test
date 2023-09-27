@@ -31,7 +31,7 @@ interface BigCard {
   title: string;
   listType: 'on' | 'off' | 'custom' | 'number';
   date?: string;
-  cardImage?: string;
+  cardImage: string;
   cardImageAlt?: string;
   hasExtra: boolean;
   separator: boolean;

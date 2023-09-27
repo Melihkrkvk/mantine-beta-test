@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          {/* <Navbar />*/}
+          <Navbar />
           {children}
           <ClassicFooter />
         </MantineProvider>
