@@ -25,7 +25,7 @@ const Page = async ({ params }: Props) => {
                 take: 2
             }
         });
-        console.log('data: ', data.data);
+        console.log('data: ', data);
     }
     catch (err: any) {
         console.log('err: ', err);

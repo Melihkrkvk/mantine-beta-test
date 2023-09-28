@@ -2,7 +2,6 @@
 import { Button, Container, Title } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 import darkMode from '@/hooks/darkMode';
 const Demo = () => {
   const { value } = darkMode();
@@ -10,7 +9,6 @@ const Demo = () => {
   return (
     <Container m={'lg'}>
       <h1>Demo page</h1>
-      <ColorSchemeToggle />
       <Button component={Link} href={'/'}>
         Back
       </Button>
@@ -21,8 +19,8 @@ const Demo = () => {
               value === 'dark'
                 ? `var(--mantine-color-grape-4)`
                 : value === 'light'
-                ? `var(--mantine-color-red-4)`
-                : '',
+                  ? `var(--mantine-color-red-4)`
+                  : '',
           },
         }}
       >

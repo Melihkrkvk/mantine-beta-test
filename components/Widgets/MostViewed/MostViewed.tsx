@@ -1,27 +1,61 @@
 'use client';
-import { Tabs, rem } from '@mantine/core';
-import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
+import { List, ListItem, Tabs, rem } from '@mantine/core';
+import { IconEye, IconMessageCircle } from '@tabler/icons-react';
 import classes from './MostViewed.module.css';
+import ExtraList from '@/components/ExtraList/ExtraList';
+import Link from 'next/link';
+
+const listData = [
+    {
+        content: 'deneme 1',
+        withImage: true,
+        Image: '',
+        link: '/',
+    },
+    {
+        content: 'deneme 2',
+        withImage: true,
+        Image: '',
+        link: '/',
+    },
+    {
+        content: 'deneme 3',
+        withImage: true,
+        Image: '',
+        link: '/',
+    },
+]
 
 const MostViewed = () => {
+
+    const listItem = listData?.map((data, index) => (
+        <Link href={data.link} key={index}>
+            <ListItem>
+                <ExtraList {...data} />
+            </ListItem>
+        </Link>
+    ));
+
     return (
         <Tabs variant="unstyled" defaultValue="mostViewed" classNames={classes}>
             <Tabs.List grow >
                 <Tabs.Tab
                     value="mostViewed"
-                    leftSection={<IconMessageCircle style={{ width: rem(16), height: rem(16) }} />}
+                    leftSection={<IconEye style={{ width: rem(16), height: rem(16) }} />}
                 >
-                    Viewed
+                    Çok Görüntülenen
                 </Tabs.Tab>
                 <Tabs.Tab
                     value="mostSpoken"
-                    leftSection={<IconPhoto style={{ width: rem(16), height: rem(16) }} />}
+                    leftSection={<IconMessageCircle style={{ width: rem(16), height: rem(16) }} />}
                 >
-                    Spoken
+                    Çok Konuşulan
                 </Tabs.Tab>
             </Tabs.List>
             <Tabs.Panel value="mostViewed" pt="xs">
-                Most Viewed content
+                <List listStyleType='none'>
+                    {listItem}
+                </List>
             </Tabs.Panel>
             <Tabs.Panel value="mostSpoken" pt="xs">
                 Most Talked tab content
