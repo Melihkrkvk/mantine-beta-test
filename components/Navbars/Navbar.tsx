@@ -8,6 +8,7 @@ import ToggleColorScheme from '../ColorSchemeToggle/ToggleColorScheme';
 
 const links = [
   { link: '/', label: 'Home' },
+  { link: '/TestPage', label: 'Test' },
 
 ];
 
@@ -23,7 +24,6 @@ const Navbar = () => {
       className={classes.link}
       data-active={active === link.link || undefined}
       onClick={(event) => {
-        event.preventDefault();
         setActive(link.link);
       }}
     >

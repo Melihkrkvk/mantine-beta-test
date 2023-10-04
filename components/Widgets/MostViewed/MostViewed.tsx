@@ -31,7 +31,7 @@ const MostViewed = () => {
     const listItem = listData?.map((data, index) => (
         <Link href={data.link} key={index}>
             <ListItem>
-                <ExtraList {...data} />
+                <ExtraList key={index} {...data} />
             </ListItem>
         </Link>
     ));

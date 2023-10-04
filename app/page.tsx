@@ -11,9 +11,17 @@ const DynamicCard = dynamic(
   }
 )
 
+const DynamicSimpleCard = dynamic(
+  () => import('@/components/Cards/SimpleCard/SimpleCard'),
+  {
+    loading: () => <p>Loading SimpleCard...</p>
+  }
+)
+
 const ComponentMapper = (component: any): any => {
   const components: any = {
     'BigCard': DynamicCard,
+    'SimpleCard': DynamicSimpleCard,
   };
   return components[component];
 };

@@ -21,8 +21,8 @@
   "dependencies": {
     "@apollo/client": "^3.8.0-rc.2",
     "@apollo/experimental-nextjs-app-support": "^0.4.3",
-    "@mantine/core": "7.0.0",
-    "@mantine/hooks": "7.0.0",
+    "@mantine/core": "7.1.2",
+    "@mantine/hooks": "7.1.2",
     "@next/bundle-analyzer": "^13.4.4",
     "@tabler/icons-react": "^2.20.0",
     "clsx": "^2.0.0",

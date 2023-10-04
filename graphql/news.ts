@@ -70,7 +70,40 @@ query pages($take: Int!) {
       deletedAt
       description
       updatedAt
-
+      template {
+        width
+        uuid
+        gap
+        height
+        id
+        margin
+        name
+        padding
+        screens {
+          gap
+          id
+          name
+          maxWidth
+          minWidth
+          padding
+          uuid
+          rows {
+            uuid
+            id
+            order
+            width
+            columns {
+              componentUuid
+              id
+              component {
+                name
+                properties
+                data
+              }
+            }
+          }
+        }
+      }
     }
   }
 }`;

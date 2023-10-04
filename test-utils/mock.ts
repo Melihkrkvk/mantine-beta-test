@@ -1,6 +1,66 @@
 
-
 export const res = {
+  grid: {
+    columns: 12,
+  },
+  rows: [
+    {
+      components: [
+        {
+          name: 'SimpleCard',
+          props: {
+            title: 'Test 1',
+            descp: 'Test 1 Descp',
+            link: '/',
+            cardImage: 'https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
+            cardImageAlt: 'Test Card',
+          },
+          breakpoints: {
+            lg: 6,
+            md: 6,
+            sm: 12,
+            xs: 12,
+          },
+        },
+        {
+          breakpoints: {
+            lg: 6,
+            md: 6,
+            sm: 12,
+            xs: 12,
+          },
+          columns: {
+            columns: 2,
+            components: [
+              {
+                name: 'SimpleCard',
+                props: {
+                  title: 'Test 2',
+                  descp: 'Test 2 Descp',
+                  link: '/',
+                  cardImage: 'https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
+                  cardImageAlt: 'Test Card 2',
+                },
+              },
+              {
+                name: 'SimpleCard',
+                props: {
+                  title: 'Test 3',
+                  descp: 'Test 3 Descp',
+                  link: '/',
+                  cardImage: 'https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
+                  cardImageAlt: 'Test Card 3',
+                },
+              },
+            ]
+          },
+        },
+      ],
+    },
+  ]
+}
+
+/* export const res = {
   grid: {
     columns: 12,
   },
@@ -212,6 +272,5 @@ export const res = {
         },
       ],
     },
-
   ],
-};
+}; */

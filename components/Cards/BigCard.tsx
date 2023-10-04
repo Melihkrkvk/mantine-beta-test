@@ -36,6 +36,7 @@ interface BigCard {
   hasExtra: boolean;
   separator: boolean;
   link: string;
+  hasBadge: boolean;
   badgeTitle: string;
   badgePos?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
   badgeIconName?: string;
@@ -84,6 +85,7 @@ export default function BigCard({
   hasExtra = false,
   separator = true,
   link,
+  hasBadge = true,
   badgeTitle = 'badge Title',
   badgePos = 'topLeft',
   badgeIconName,
@@ -166,10 +168,12 @@ export default function BigCard({
             <AspectRatio ratio={1920 / 1080}>
               <Image src={cardImage} alt={cardImageAlt} />
             </AspectRatio>
-            <Box style={badgePoses[badgePos]} ta={'center'} className={classes.badge}>
-              <Component style={{ marginRight: 8, alignSelf: 'center', color: 'red' }} size={20} />
-              {badgeTitle}
-            </Box>
+            {hasBadge === true &&
+              <Box style={badgePoses[badgePos]} ta={'center'} className={classes.badge}>
+                <Component style={{ marginRight: 8, alignSelf: 'center', color: 'red' }} size={20} />
+                {badgeTitle}
+              </Box>
+            }
           </div>
           <Text
             className={classes.text_hover}
