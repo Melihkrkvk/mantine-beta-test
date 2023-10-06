@@ -1,32 +1,21 @@
 'use client';
-import { Button, Container, Title } from '@mantine/core';
+import { Button, Container, Grid, GridCol, SimpleGrid, Title } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import darkMode from '@/hooks/darkMode';
+import SimpleCard from '@/components/Cards/SimpleCard/SimpleCard';
+import BasicCard from '@/components/Cards/BasicCard/BasicCard';
 const Demo = () => {
-  const { value } = darkMode();
 
   return (
-    <Container m={'lg'}>
-      <h1>Demo page</h1>
-      <Button component={Link} href={'/'}>
-        Back
-      </Button>
-      <Title
-        styles={{
-          root: {
-            color:
-              value === 'dark'
-                ? `var(--mantine-color-grape-4)`
-                : value === 'light'
-                  ? `var(--mantine-color-red-4)`
-                  : '',
-          },
-        }}
-      >
-        Deneme
-      </Title>
-      <Button color={'my-blue'}>Test</Button>
+    <Container size={'lg'}>
+      <Grid columns={12}>
+        <GridCol bg={'red'} span={{ base: 6 }}>
+          grid col 1
+        </GridCol>
+        <GridCol bg={'blue'} span={{ base: 6 }}>
+          grid col 2
+        </GridCol>
+      </Grid>
     </Container>
   );
 };

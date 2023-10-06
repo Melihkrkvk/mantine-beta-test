@@ -52,6 +52,26 @@ export const res = {
                   cardImageAlt: 'Test Card 3',
                 },
               },
+              {
+                name: 'SimpleCard',
+                props: {
+                  title: 'Test 3',
+                  descp: 'Test 3 Descp',
+                  link: '/',
+                  cardImage: 'https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
+                  cardImageAlt: 'Test Card 3',
+                },
+              },
+              {
+                name: 'SimpleCard',
+                props: {
+                  title: 'Test 3',
+                  descp: 'Test 3 Descp',
+                  link: '/',
+                  cardImage: 'https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
+                  cardImageAlt: 'Test Card 3',
+                },
+              },
             ]
           },
         },
