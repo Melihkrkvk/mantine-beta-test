@@ -1,4 +1,4 @@
-import { Container, Grid, GridCol, SimpleGrid } from '@mantine/core';
+import { Button, Container, Grid, GridCol, SimpleGrid } from '@mantine/core';
 import Link from 'next/link';
 import BasicCard from '@/components/Cards/BasicCard/BasicCard';
 import dynamic from 'next/dynamic';
