@@ -9,7 +9,7 @@ import ToggleColorScheme from '../ColorSchemeToggle/ToggleColorScheme';
 const links = [
   { link: '/', label: 'Home' },
   { link: '/TestPage', label: 'Test' },
-
+  { link: '/Demo', label: 'Demo' },
 ];
 
 const Navbar = () => {
@@ -45,5 +45,5 @@ const Navbar = () => {
       </Container>
     </header>
   );
-}
+};
 export default Navbar;

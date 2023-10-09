@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "category": "spor",
+    "slug": "fenerbahce-kupayi-kazandi",
+    "title": "Fenerbahçe bugün UEFA Şampiyonlar ligi kupasını kazandı",
+    "description": "<h1 style={'var(--mantine-color-blue-6)'}>Faiz Kararı</h1><p>Fenerbahçe bugün UEFA Şampiyonlar ligi kupasını kazandı. Fenerbahçe bugün UEFA Şampiyonlar ligi kupasını kazandı. Fenerbahçe bugün UEFA Şampiyonlar ligi kupasını kazandı. Fenerbahçe bugün UEFA Şampiyonlar ligi kupasını kazandı...</p>",
+    "img": "https://images.unsplash.com/photo-1515787366009-7cbdd2dc587b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGxhY2Vob2xkZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+  },
+  {
+    "id": 2,
+    "category": "ekonomi",
+    "slug": "faiz-karari",
+    "title": "Faiz Kararı",
+    "description": "<p>FED faiz kararı Eylül 2023 son dakika açıklama ile belli oldu. Piyasaları yakından etkileyen FED faiz kararı 20 Eylül tarihinde açıklandı. Altın, dolar gibi ekonominin temel taşlarını etkileyen FED'in kararından enflasyon rakamları belirleyici oldu. ABD Merkez Bankası toplantısı Ağustos ayında gerçekleştirmedi. Bu nedenle Eylül ayı toplantısı ile alınacak. FED faiz kararı piyasalarda etkili olacak. Peki ABD Merkez Bankası FED faiz kararı ne oldu? İşte, FED Eylül 2023 faiz kararı ve ABD Merkez Bankası toplantı takvimi...</p>",
+    "img": "https://images.unsplash.com/photo-1515787366009-7cbdd2dc587b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGxhY2Vob2xkZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+  }
+]

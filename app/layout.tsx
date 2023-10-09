@@ -4,7 +4,6 @@ import { theme } from '../theme';
 import ClassicFooter from '@/components/Footers/ClassicFooter/ClassicFooter';
 import Navbar from '@/components/Navbars/Navbar';
 
-
 export const metadata = {
   title: 'Daktilo 2.0',
   description: 'Daktilo',
@@ -12,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <head>
         <ColorSchemeScript />
       </head>
