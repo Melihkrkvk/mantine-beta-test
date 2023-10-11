@@ -2,7 +2,7 @@ import '@mantine/core/styles.css';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
 import ClassicFooter from '@/components/Footers/ClassicFooter/ClassicFooter';
-import Navbar from '@/components/Navbars/Navbar';
+import Navbar from '@/components/Navbars/Navbar/Navbar';
 
 export const metadata = {
   title: 'Daktilo 2.0',
