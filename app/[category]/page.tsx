@@ -18,7 +18,7 @@ const CategoryPage = async ({ params }: any) => {
   }*/
   const { category } = params;
 
-  return <div>Dynamic Category Page {category}</div>;
+  return <div>Dynamic Page {category}</div>;
 };
 
 export default CategoryPage;
