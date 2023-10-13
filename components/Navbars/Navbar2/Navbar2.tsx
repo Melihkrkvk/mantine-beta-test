@@ -182,7 +182,7 @@ const Navbar2 = () => {
   const theme = useMantineTheme();
 
 
-  //BEST PRACTICE Mİ? KONTROL ET
+
   const menuLinks = mockdata.map((item, index) => {
     const megaMenuItems = item.megaMenuLinks?.map((item, key) => {
       return (
