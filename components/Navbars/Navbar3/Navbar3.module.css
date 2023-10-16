@@ -60,3 +60,12 @@
     text-decoration: none;
   }
 }
+
+.icon {
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
+
+  @mixin hover {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+
+  }
+}

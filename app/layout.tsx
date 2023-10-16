@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: any }) {
         <MantineProvider theme={theme}>
           {/* <Navbar /> */}
           {/* <Navbar2 /> */}
-          <Navbar3 />
+          <Navbar3 toggler />
           {children}
           <ClassicFooter />
         </MantineProvider>
