@@ -55,55 +55,28 @@ import { gql } from "@apollo/client";
   }
 `; */
 export const GET_NEWS = gql`
-query pages($take: Int!) {
-  pages(take: $take) {
-    pagination {
-      totalPages
-      totalItems
-      skip
-    }
-    items {
+query PageByName($name: String!, $filter: PageFilter) {
+  pageByName(name: $name, filter: $filter) {
+    name
+    template {
       id
       name
-      uuid
-      createdAt
-      deletedAt
-      description
-      updatedAt
-      template {
-        width
-        uuid
-        gap
-        height
+      screens {
         id
-        margin
         name
-        padding
-        screens {
-          gap
-          id
-          name
-          maxWidth
-          minWidth
-          padding
-          uuid
-          rows {
-            uuid
+        rows {
+          columns {
             id
             order
-            width
-            columns {
-              componentUuid
-              id
-              component {
-                name
-                properties
-                data
-              }
+            component {
+              data
+              name
+              properties
             }
           }
         }
       }
     }
   }
-}`;
+}
+`;

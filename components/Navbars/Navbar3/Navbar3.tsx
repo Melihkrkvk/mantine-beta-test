@@ -45,6 +45,10 @@ const links = [
             },
         ],
     },
+    {
+        link: '/',
+        label: 'Home'
+    },
 ];
 
 const mainLinks = [

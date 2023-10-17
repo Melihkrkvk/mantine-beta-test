@@ -3,6 +3,8 @@ import Link from 'next/link';
 import BasicCard from '@/components/Cards/BasicCard/BasicCard';
 import dynamic from 'next/dynamic';
 import { res } from '@/test-utils/mock';
+import { getClient } from '@/lib/client';
+import { GET_NEWS } from '@/graphql/news';
 
 const DynamicCard = dynamic(
   () => import('@/components/Cards/BigCard'),
@@ -27,7 +29,26 @@ const ComponentMapper = (component: any): any => {
 };
 
 
-export default function HomePage() {
+
+
+export default async function HomePage() {
+  const data = await getClient().query<any>({
+    query: GET_NEWS,
+    variables: {
+      name: "home",
+    }
+  })
+
+  try {
+    console.log(data.data.pageByName.template.screens[0].rows[0].columns[0].component);
+    console.log(data.data.pageByName.template.screens[0].rows[0].columns[0].component.properties[0].value);
+
+  } catch (error) {
+    console.log(error);
+
+  }
+
+
   return (
     <>
       <Container my="md">
