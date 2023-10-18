@@ -6,6 +6,8 @@ import { useMediaQuery } from '@mantine/hooks';
 import { Button, Container, Grid, GridCol, Group, Text, Title } from '@mantine/core';
 import BasicCard from '@/components/Cards/BasicCard/BasicCard';
 import BigCard from '@/components/Cards/BigCard';
+import StandartSlider from '@/components/Sliders/StandartSlider/StandartSlider';
+import SliderThumbnail from '@/components/Sliders/SliderThumbnail/SliderThumbnail';
 
 const TestPage = () => {
   /* const mobile = useMediaQuery('(max-width: 36em)', true, { getInitialValueInEffect: false });
@@ -34,9 +36,7 @@ const TestPage = () => {
   return (
     <>
       <Container>
-        <Grid>
-          <GridCol span={6}></GridCol>
-        </Grid>
+        <SliderThumbnail />
       </Container>
     </>
   );
