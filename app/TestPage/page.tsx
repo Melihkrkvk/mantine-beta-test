@@ -36,7 +36,7 @@ const TestPage = () => {
   return (
     <>
       <Container>
-        <SliderThumbnail />
+        {/* <SliderThumbnail  /> */}
       </Container>
     </>
   );

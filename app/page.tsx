@@ -14,10 +14,15 @@ const DynamicSimpleCard = dynamic(() => import('@/components/Cards/SimpleCard/Si
   loading: () => <p>Loading SimpleCard...</p>,
 });
 
+const DynamicSlider = dynamic(() => import('@/components/Sliders/SliderThumbnail/SliderThumbnail'), {
+  loading: () => <p>Loading Dynamic Slider</p>
+})
+
 const ComponentMapper = (component: any): any => {
   const components: any = {
     BigCard: DynamicCard,
     SimpleCard: DynamicSimpleCard,
+    SliderThumbnail: DynamicSlider,
   };
   return components[component];
 };
@@ -63,26 +68,19 @@ export default async function HomePage() {
             return row.columns.map((column: any, columnIndex: any) => {
               const Component = ComponentMapper(column.component.name);
 
-              console.log('data: ', column.component.data);
+              /* console.log('data: ', column.component.data); */
 
-              const title =
+              /* const title =
                 column.component.data.length > 0 ? column.component.data[0].title : 'title';
               const slug =
-                column.component.data.length > 0 ? column.component.data[0].slug : 'slug';
+                column.component.data.length > 0 ? column.component.data[0].slug : 'slug'; */
 
               const props = column.component.properties.reduce((acc: any, val: any) => {
-                let value = val.value.includes('true') ? true : false;
-                if (val.value.includes('true')) {
-                  value = true;
-                } else if (val.value.includes('false')) {
-                  value = false;
-                } else {
-                  value = val.value;
-                }
+                let value = val.value;
                 acc[val.name] = value;
                 return acc;
               }, {});
-              console.log({ props });
+
 
               /*  if (component.column && component.columns.components.length) {
                 return (
@@ -120,10 +118,17 @@ export default async function HomePage() {
                   </SimpleGrid>
                 </GridCol>
               ); */
+              if (column.component.name.includes('Slider')) {
+                return (
+                  <Component data={column.component.data} />
+                )
+              }
 
               return (
                 <GridCol>
-                  <Component {...{ ...props, title, link: `/${slug}` }} />
+
+                  <Component {...{ ...props, title: column.component.data.title, link: `/${column.component.data.slug}` }} />
+
                 </GridCol>
               );
             });
