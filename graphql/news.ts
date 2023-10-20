@@ -68,6 +68,7 @@ query PageByName($name: String!, $filter: PageFilter) {
           columns {
             id
             order
+            span
             component {
               data
               name

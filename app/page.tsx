@@ -62,24 +62,21 @@ export default async function HomePage() {
 
   return (
     <>
-      <Container my="md">
+      <Container my="lg">
         <Grid columns={12}>
           {res.desktop.rows?.map((row: any, index: any) => {
             return row.columns.map((column: any, columnIndex: any) => {
               const Component = ComponentMapper(column.component.name);
-
-              /* console.log('data: ', column.component.data); */
-
               /* const title =
                 column.component.data.length > 0 ? column.component.data[0].title : 'title';
               const slug =
                 column.component.data.length > 0 ? column.component.data[0].slug : 'slug'; */
-
               const props = column.component.properties.reduce((acc: any, val: any) => {
                 let value = val.value;
                 acc[val.name] = value;
                 return acc;
               }, {});
+
 
 
               /*  if (component.column && component.columns.components.length) {
@@ -102,6 +99,22 @@ export default async function HomePage() {
                   </GridCol>
                 );
               } */
+              /*    if (component.column && component.columns.components.length) {
+                  return (
+                    <GridCol
+                      span={{base: column.span}}
+                      key={columnIndex}
+                      id={`grid col ${index}`}
+                    >
+                      <SimpleGrid key={index} cols={component.columns.columns}>
+                        {component.columns.components.map((col: any) => {
+                          const NewComponent = ComponentMapper(col.name);
+                          return <NewComponent {...col.props} />;
+                        })}
+                      </SimpleGrid>
+                    </GridCol>
+                  );
+                } */
               /*  return (
                 <GridCol
                   span={{
@@ -120,15 +133,15 @@ export default async function HomePage() {
               ); */
               if (column.component.name.includes('Slider')) {
                 return (
-                  <Component data={column.component.data} />
+                  <GridCol key={columnIndex} id={`grid col ${index}`} span={{ base: column.span }}>
+                    <Component data={column.component.data} />
+                  </GridCol>
                 )
               }
 
               return (
-                <GridCol>
-
-                  <Component {...{ ...props, title: column.component.data.title, link: `/${column.component.data.slug}` }} />
-
+                <GridCol key={columnIndex} id={`grid col ${index}`} span={{ base: column.span }}>
+                  <Component listData={column.component.data} link="/" {...props} />
                 </GridCol>
               );
             });

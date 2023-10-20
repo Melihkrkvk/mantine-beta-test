@@ -52,7 +52,7 @@ interface BigCard {
   };
   listData?: Array<{
     withImage: boolean;
-    content: string;
+    title: string;
     link: string;
     selfIconName?: any;
     hoverColor?: string;
@@ -122,7 +122,7 @@ export default function BigCard({
   };
 
   const listdata = listData?.map((data, index) => (
-    <Link key={index} href={data.link} className={classes.main_link}>
+    <Link key={index} href={'/'} className={classes.main_link}>
       <List.Item
         icon={data.selfIconName}
         key={index}

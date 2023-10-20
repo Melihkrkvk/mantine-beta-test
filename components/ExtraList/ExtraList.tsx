@@ -4,13 +4,13 @@ import classes from './ExtraList.module.css';
 import { Card, Image, Text } from '@mantine/core';
 
 interface ExtraList {
-  content?: string;
+  title?: string;
   withImage: boolean;
   image?: string;
   hoverColor?: any;
 }
 
-const ExtraList = ({ content, withImage, image, hoverColor }: ExtraList) => {
+const ExtraList = ({ title, withImage, image, hoverColor }: ExtraList) => {
   return (
     <>
       {withImage ? (
@@ -23,7 +23,7 @@ const ExtraList = ({ content, withImage, image, hoverColor }: ExtraList) => {
             }}
             className={classes.text_style}
           >
-            {content}
+            {title}
           </Text>
         </Card>
       ) : (
@@ -33,7 +33,7 @@ const ExtraList = ({ content, withImage, image, hoverColor }: ExtraList) => {
           }}
           className={classes.text_style}
         >
-          {content}
+          {title}
         </Text>
       )}
     </>
