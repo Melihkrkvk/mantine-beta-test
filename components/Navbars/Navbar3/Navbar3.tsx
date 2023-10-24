@@ -60,6 +60,20 @@ const links = [
     link: '/',
     label: 'Home',
   },
+  {
+    link: '/news',
+    label: 'News',
+    subLinks: [
+      {
+        link: '/news/economics',
+        label: 'Economic',
+      },
+      {
+        link: '/news/politics',
+        label: 'Politics',
+      },
+    ],
+  },
 ];
 
 const mainLinks = [
@@ -169,7 +183,7 @@ const Navbar3 = ({ toggler = true }: Navbar3) => {
             key={index}
             className={classes.mainLink}
             data-active={pathname === item.link || undefined}
-            onClick={(event) => {}}
+            onClick={(event) => { }}
           >
             {item.label}
           </Anchor>

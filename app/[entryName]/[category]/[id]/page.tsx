@@ -4,9 +4,7 @@ import DetailSystem from '@/components/DetailSystem/DetailSystem';
 import { GET_NEWS } from '@/graphql/news';
 import { getClient } from '@/lib/client';
 import { Anchor, Breadcrumbs, Container, Grid, SimpleGrid } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
-import news from '../../../test-utils/newsData.json';
-import { notFound } from 'next/navigation';
+
 
 /*type Props = {
   params: {
@@ -15,31 +13,30 @@ import { notFound } from 'next/navigation';
 };*/
 
 const Page = async ({ params }: any) => {
-  const { category, slug } = params;
-  const items = [
-    { title: 'Demo', href: '/Demo' },
-    { title: `${category}`, href: `/${category}` },
-  ].map((item, index) => (
-    <Anchor href={item.href} key={index}>
-      {item.title}
-    </Anchor>
-  ));
+  const { entryName, category, id } = params;
 
-  const foundNews = news.find((news) => news.slug === slug);
+
+
+
+  /* const foundNews = news.find((news) => news.slug === slug);
   if (!foundNews) {
     notFound();
-  }
+  } */
   return (
     <>
       <Container size={'lg'} mb={25}>
-        <Breadcrumbs>{items}</Breadcrumbs>
+        {/* <Breadcrumbs>{items}</Breadcrumbs> */}
+        <p>entryName: {entryName}</p><br />
+        <p>category: {category}</p><br />
+        <p>id: {id}</p><br />
+
       </Container>
-      <DetailSystem
+      {/*  <DetailSystem
         title={foundNews.title}
         sideBarPos="right"
         htmlData={foundNews.description}
         img={foundNews.img}
-      />
+      /> */}
     </>
   );
 };

@@ -50,12 +50,14 @@ interface BigCard {
     radius?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | number;
     color?: string;
   };
+  withImage: boolean;
   listData?: Array<{
-    withImage: boolean;
+    /*     withImage: boolean; */
     title: string;
-    link: string;
+    slug: string;
     selfIconName?: any;
     hoverColor?: string;
+    id: number;
   }>;
 }
 
@@ -96,6 +98,7 @@ export default function BigCard({
   listIconSettings,
   cardImage,
   cardImageAlt,
+  withImage,
   cardSettings = {
     cardRadius: 'md',
     dateFontColor: 'dimmed',
@@ -122,7 +125,7 @@ export default function BigCard({
   };
 
   const listdata = listData?.map((data, index) => (
-    <Link key={index} href={'/'} className={classes.main_link}>
+    <Link key={index} href={`${data.id}${data.slug}`} className={classes.main_link}>
       <List.Item
         icon={data.selfIconName}
         key={index}
@@ -130,7 +133,7 @@ export default function BigCard({
         pb={10}
         className={separator ? classes.list_item : ''}
       >
-        <ExtraList hoverColor={cardSettings.cardHoverColor} {...data} />
+        <ExtraList hoverColor={cardSettings.cardHoverColor} withImage={withImage} {...data} />
       </List.Item>
     </Link>
   ));

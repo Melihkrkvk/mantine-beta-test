@@ -7,7 +7,7 @@ export const dynamicParams = true; // SSG'mi SSR'mı çalışacak?
 
 export function generateStaticParams() {
   return categories.map((slug) => ({
-    category: slug,
+    entryName: slug,
   }));
 }
 
@@ -16,9 +16,9 @@ const CategoryPage = async ({ params }: any) => {
   if (!isFound) {
     notFound();
   }*/
-  const { category } = params;
+  const { entryName } = params;
 
-  return <div>Dynamic Page {category}</div>;
+  return <div>Dynamic Page {entryName}</div>;
 };
 
 export default CategoryPage;

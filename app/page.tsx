@@ -35,11 +35,8 @@ export default async function HomePage() {
     },
   });
 
-  /*  try {
-    console.log(data.data.pageByName.template.screens[0].rows[0].columns[0].component);
-    console.log(
-      data.data.pageByName.template.screens[0].rows[0].columns[0].component.properties[0].value
-    );
+  /* try {
+    console.log(data.data.pageByName.template.screens[0]);
   } catch (error) {
     console.log(error);
   } */
@@ -60,10 +57,11 @@ export default async function HomePage() {
     return acc;
   }, {});
 
+
   return (
     <>
       <Container my="lg">
-        <Grid columns={12}>
+        <Grid h={'100%'} columns={12}>
           {res.desktop.rows?.map((row: any, index: any) => {
             return row.columns.map((column: any, columnIndex: any) => {
               const Component = ComponentMapper(column.component.name);
@@ -131,6 +129,8 @@ export default async function HomePage() {
                   </SimpleGrid>
                 </GridCol>
               ); */
+
+
               if (column.component.name.includes('Slider')) {
                 return (
                   <GridCol key={columnIndex} id={`grid col ${index}`} span={{ base: column.span }}>
@@ -141,7 +141,7 @@ export default async function HomePage() {
 
               return (
                 <GridCol key={columnIndex} id={`grid col ${index}`} span={{ base: column.span }}>
-                  <Component listData={column.component.data} link="/" {...props} />
+                  <Component listData={column.component.data} link={'/'} {...props} />
                 </GridCol>
               );
             });
